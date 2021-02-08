@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+"""
+Run bpython inside Docker container.
+
+Example usage:
+docker_bpython gipc # will install `gipc` and run `bpython`
+"""
+import subprocess
+import sys
+
+COMMAND = 'docker run -it --rm --name docker_bpython litteratum/bpython'
+
+
+if len(sys.argv) > 1:
+    COMMAND += ' ' + ' '.join(sys.argv[1:])
+
+subprocess.run(COMMAND.split(), check=False)
