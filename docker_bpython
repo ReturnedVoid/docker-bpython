@@ -8,7 +8,7 @@ docker_bpython gipc # will install `gipc` and run `bpython`
 import subprocess
 import sys
 
-COMMAND = 'docker run -it --rm --name docker_bpython litteratum/bpython'
+COMMAND = 'docker run -it --rm --network host --name docker_bpython litteratum/bpython'
 
 
 if len(sys.argv) > 1:
